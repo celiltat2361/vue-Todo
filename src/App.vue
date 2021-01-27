@@ -73,11 +73,13 @@
 
     <v-main>
      <router-view></router-view>
+     <snackbar />
     </v-main>
   </v-app>
 </template>
 
 <script>
+
   export default {
     data: () => ({ 
       drawer: null,
@@ -87,5 +89,9 @@
         ], 
       
       }),
+    components: {
+     snackbar: require('@/components/Shared/Snackbar.vue').default
+        
+    }  
   }
 </script>
