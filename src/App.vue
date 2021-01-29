@@ -2,6 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer 
       v-model="drawer"
+      :mobile-breakpoint="768"
       app
       >
       <v-list-item>
@@ -40,10 +41,11 @@
 
       <v-app-bar
       app
-      color="primary"
+      color="indigo"
       dark
       src="horses.jpg"
       prominent
+      height="170"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -51,24 +53,15 @@
           gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
-
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-app-bar-title>My Todo List</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+        
+            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-title class="text-h4 ml-4">My Todo List</v-app-bar-title>
+            <v-spacer></v-spacer>
+       
+        
+            
+          
+       
     </v-app-bar>
 
     <v-main>
@@ -79,19 +72,18 @@
 </template>
 
 <script>
-
   export default {
     data: () => ({ 
       drawer: null,
-         items: [
+        items: [
           { title: 'Todo', icon: 'mdi-clipboard-list-outline', to: '/' },
           { title: 'About', icon: 'mdi-help-box', to: '/about' },
         ], 
       
-      }),
+    }),
     components: {
-     snackbar: require('@/components/Shared/Snackbar.vue').default
-        
+     'snackbar': require('@/components/Shared/Snackbar.vue').default
     }  
   }
 </script>
+

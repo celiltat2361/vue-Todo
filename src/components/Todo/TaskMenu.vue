@@ -47,6 +47,12 @@
       @close="dialogs.delete = false"
       :task="task"
     />
+
+    <dialog-sorting
+      v-if="dialogs.sorting"
+      @close="dialogs.sorting = false"
+      :task="task"
+    />
     
 
   </div>
@@ -82,7 +88,14 @@ export default {
         click() {
           this.dialogs.delete = true
         }
-      }
+      },
+        {
+        title: 'Sort',
+        icon: 'mdi-drag-horizontal-variant',
+        click() {
+          this.$store.commit('toggleSorting')
+        }
+      },  
     ],
   }),
   methods: {

@@ -40,6 +40,7 @@ export default new Vuex.Store({
       show: false,
       text: "",
     },
+    sorting: false
   },
   mutations: {
     addTask(state, newTaskTitle) {
@@ -49,11 +50,17 @@ export default new Vuex.Store({
         done: false,
         dueDate: null
       }
-      state.tasks.push(newTask)
+      state.tasks.unshift(newTask)
     },
     doneTask(state, id) {
+      //const index = state.tasks.indexOf(state.tasks.id)
       let task = state.tasks.filter(task => task.id === id)[0]
       task.done = !task.done
+      //let newItemF = state.tasks.splice(task, 1)
+      //console.log(newItemF)
+      //state.tasks.push(newItemF)
+      //state.tasks.remove(task)
+      //console.log(index)
     },
     deleteTask(state, id) {
       state.tasks = state.tasks.filter(task => task.id !== id)
@@ -79,6 +86,9 @@ export default new Vuex.Store({
     },
     hideSnackbar(state) {
       state.snackbar.show = false
+    },
+    toggleSorting(state) {
+      state.sorting = !state.sorting 
     }
   },
   actions: {
