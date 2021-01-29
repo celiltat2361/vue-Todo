@@ -1,31 +1,23 @@
 <template>
-  <v-snackbar
-      v-model="$store.state.snackbar.show"
-    >
-      {{ text }}
+  <v-snackbar v-model="$store.state.snackbar.show">
+    {{ $store.state.snackbar.text }}
 
-      <template v-slot:action="{ attrs }">
-        <v-btn
-          color="pink"
-          text
-          v-bind="attrs"
-          @click="snackbar = false"
-        >
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar> 
+    <template v-slot:action="{ attrs }">
+      <v-btn
+        @click="$store.commit('hideSnackbar')"
+        color="#ffffff"
+        text
+        v-bind="attrs"
+      >
+        Close
+      </v-btn>
+    </template>
+  </v-snackbar>
 </template>
 
 <script>
-export default {
-  data: () => ({
-      snackbar: true,
-      text: `Hello, I'm a snackbar`,
-    }),    
-}
+export default {};
 </script>
 
 <style>
-
 </style>
