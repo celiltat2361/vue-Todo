@@ -1,12 +1,13 @@
 <template>
   <div>
-    <v-menu
+    <v-menu 
       bottom
       left
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          color="primary"
+          class="ml-n2"
+          color="indigo"
           icon
           v-bind="attrs"
           v-on="on"
