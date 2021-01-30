@@ -10,7 +10,6 @@ export default new Vuex.Store({
         id: 1,
         user: "Celil",
         title: "Wake up",
-        
         done: false,
         dueDate: ""
       },
@@ -18,23 +17,20 @@ export default new Vuex.Store({
         id: 2,
         user: "Tuba",
         title: "breakfast",
-        
         done: false,
         dueDate: ""
       },
       {
         id: 3,
-        user: "Hikmet Nail",
+        user: "Hikmet",
         title: "study lesson",
-        
         done: false,
         dueDate: ""
       },
       {
         id: 4,
-        user: "HikmetNail",
+        user: "Nail",
         title: "read book",
-        
         done: false,
         dueDate: ""
       },
@@ -51,20 +47,20 @@ export default new Vuex.Store({
       let newTask = {
         id: Date.now(),
         title: newTaskTitle,
+        user: "",
+        timeNow: Date.now(),
         done: false,
         dueDate: null
       }
       state.tasks.unshift(newTask)
     },
+    addUser(state, payload) {
+      let task = state.tasks.filter(task => task.id === payload.id)[0]
+      task.user = payload.user
+    },
     doneTask(state, id) {
-      //const index = state.tasks.indexOf(state.tasks.id)
       let task = state.tasks.filter(task => task.id === id)[0]
       task.done = !task.done
-      //let newItemF = state.tasks.splice(task, 1)
-      //console.log(newItemF)
-      //state.tasks.push(newItemF)
-      //state.tasks.remove(task)
-      //console.log(index)
     },
     deleteTask(state, id) {
       state.tasks = state.tasks.filter(task => task.id !== id)

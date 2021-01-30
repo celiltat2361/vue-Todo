@@ -20,8 +20,13 @@
            
           </v-list-item-title>
         </v-list-item-content>
-        
+
+        <v-list-item-content v-if="task.user">
+          <v-list-item-title>{{ task.user }}</v-list-item-title>
+        </v-list-item-content>
+                
          <v-list-item-action>
+           
           <live-date-time />
         </v-list-item-action>  
 
@@ -64,9 +69,11 @@ export default {
   filters: {
     niceDate(value) {
       return format(new Date(value), 'MMM d') //sverige date-time format
-    }  
+    },
+    
   },
   components: {
+    //'task-user': require('@/components/Todo/FieldAddUser.vue').default,
     'task-menu': require('@/components/Todo/TaskMenu.vue').default,
     'live-date-time': require('@/components/Todo/LiveDateTime.vue').default
   }

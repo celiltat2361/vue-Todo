@@ -30,7 +30,13 @@
       </v-list>
     </v-menu>
 
-     <dialog-edit
+    <dialog-user
+      v-if="dialogs.user"
+      @close="dialogs.user = false"
+      :task="task"
+    />
+
+    <dialog-edit
       v-if="dialogs.edit"
       @close="dialogs.edit = false"
       :task="task"
@@ -63,6 +69,7 @@ export default {
   props: ['task'],
   data: () => ({
     dialogs: {
+      user: false,
       edit: false,
       dueDate: false,
       delete: false
@@ -72,7 +79,7 @@ export default {
         title: 'Add User',
         icon: 'mdi-account',
         click() {
-          this.dialogs.user = false;
+          this.dialogs.user = true;
         }
       },
       { 
@@ -111,6 +118,7 @@ export default {
     }
   },
   components: {
+    'dialog-user': require('@/components/Todo/Dialogs/DialogUser.vue').default,
     'dialog-edit': require('@/components/Todo/Dialogs/DialogEdit.vue').default,
     'dialog-due-date': require('@/components/Todo/Dialogs/DialogDueDate.vue').default,
     'dialog-delete': require('@/components/Todo/Dialogs/DialogDelete.vue').default,
