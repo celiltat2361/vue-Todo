@@ -10,29 +10,33 @@ export default new Vuex.Store({
         id: 1,
         user: "Celil",
         title: "Wake up",
+        
         done: false,
-        dueDate: "2021-01-29"
+        dueDate: ""
       },
       {
         id: 2,
         user: "Tuba",
         title: "breakfast",
+        
         done: false,
-        dueDate: "2021-01-29"
+        dueDate: ""
       },
       {
         id: 3,
         user: "Hikmet Nail",
         title: "study lesson",
+        
         done: false,
-        dueDate: "2021-01-29"
+        dueDate: ""
       },
       {
         id: 4,
         user: "HikmetNail",
         title: "read book",
+        
         done: false,
-        dueDate: "2021-01-30"
+        dueDate: ""
       },
 
     ],

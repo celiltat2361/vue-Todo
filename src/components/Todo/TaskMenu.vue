@@ -69,6 +69,13 @@ export default {
     },
     items: [
       { 
+        title: 'Add User',
+        icon: 'mdi-account',
+        click() {
+          this.dialogs.user = false;
+        }
+      },
+      { 
         title: 'Edit',
         icon: 'mdi-pencil',
         click() {
@@ -112,5 +119,6 @@ export default {
 </script>
 
 <style>
-
+  
+  
 </style>

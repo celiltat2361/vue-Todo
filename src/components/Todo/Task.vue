@@ -6,19 +6,24 @@
     >
       <template v-slot:default>
         <v-list-item-action>
-          <v-checkbox
+          <v-checkbox 
             :input-value="task.done"
             color="primary"
           ></v-checkbox>
         </v-list-item-action>
 
         <v-list-item-content>
-          <v-list-item-title
-            :class="{ 'text-decoration-line-through' : task.done }"
+          <v-list-item-title 
+            :class="{ 'text-decoration-line-through' : task.done } "
           >
             {{ task.title }}
+           
           </v-list-item-title>
         </v-list-item-content>
+        
+         <v-list-item-action>
+          <live-date-time />
+        </v-list-item-action>  
 
         <v-list-item-action v-if="task.dueDate">
             <v-list-item-action-text>
@@ -62,7 +67,12 @@ export default {
     }  
   },
   components: {
-    'task-menu': require('@/components/Todo/TaskMenu.vue').default
+    'task-menu': require('@/components/Todo/TaskMenu.vue').default,
+    'live-date-time': require('@/components/Todo/LiveDateTime.vue').default
   }
 }
 </script>
+
+<style>
+ 
+</style>

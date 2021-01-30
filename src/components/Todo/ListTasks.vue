@@ -1,10 +1,10 @@
 <template>
     <v-list 
-      class="pt-0"
+      class="pt-2"
       two-line 
       flat>
       <draggable tag="ul" :list="$store.state.tasks" handle=".handle">
-      <task 
+      <task class="listItems"
         v-for="task in $store.state.tasks"
         :key="task.id"
         :task="task"
@@ -24,5 +24,10 @@ export default {
 </script>
 
 <style>
-
+@media screen and (max-width: 540px) {
+    .listItems {
+    margin-left: -12px;
+  }
+    
+  }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" class="allItems">
     <v-navigation-drawer 
       v-model="drawer"
       :mobile-breakpoint="768"
-      app
+       app
       >
       <v-list-item>
         <v-list-item-content>
@@ -28,7 +28,7 @@
           :to="item.to"
           link
         >
-          <v-list-item-icon>
+          <v-list-item-icon class="textItem">
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
@@ -57,11 +57,7 @@
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-app-bar-title class="text-h4 ml-4">My Todo List</v-app-bar-title>
             <v-spacer></v-spacer>
-       
-        
-            
-          
-       
+      
     </v-app-bar>
 
     <v-main>
@@ -86,4 +82,19 @@
     }  
   }
 </script>
+
+<style>
+  @media screen and (min-width: 992px) {
+    .allItems {
+      max-width: 90%;
+  }
+ 
+  }
+  
+   @media screen and (max-width: 542px) {
+    .textItems {
+      margin-right: 12px;
+  }
+   }
+</style>
 
