@@ -22,7 +22,7 @@
         </v-list-item-content>
 
         <v-list-item-content v-if="task.user">
-          <v-list-item-user>{{ task.user }}</v-list-item-user>
+          <v-list-item-title>{{ task.user }}</v-list-item-title>
         </v-list-item-content>
                 
          <v-list-item-action>
@@ -68,7 +68,7 @@ export default {
   props: ['task'],
   filters: {
     niceDate(value) {
-      return format(new Date(value), 'MMM d') 
+      return format(new Date(value), 'MMM d') //sverige date-time format
     },
     
   },
