@@ -6,7 +6,6 @@
       solo
       class="pa-3 pb-0 mt-n1" 
       label="Add Todo"
-  
       hide-details
       clearable
   >

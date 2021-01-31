@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { format } from 'date-fns'
+import { format } from 'date-fns' // used for date-time format from npm library
 export default {
   data() {
     return {
@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     getDate() {
-     this.date = format(new Date(),  'yy.MM.d HH:mm')
+     this.date = format(new Date(),  'yy.MM.d HH:mm') //sverige date-time format
     }
   },
   mounted() {

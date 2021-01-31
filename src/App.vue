@@ -11,13 +11,11 @@
             My Todo App
           </v-list-item-title>
           <v-list-item-subtitle>
-            Best Todo
+            Todo
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-
-      <v-divider></v-divider>
-
+        <v-divider></v-divider>
       <v-list
         dense
         nav
@@ -39,28 +37,25 @@
       </v-list>
     </v-navigation-drawer>
 
-      <v-app-bar
+    <v-app-bar
       app
       color="indigo"
       dark
       src="horses.jpg"
       prominent
       height="170"
-    >
+      >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
           gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
-        
-            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-app-bar-title class="text-h4 ml-4">My Todo List</v-app-bar-title>
-            <v-spacer></v-spacer>
-      
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-title class="text-h4 ml-4">My Todo List</v-app-bar-title>
+        <v-spacer></v-spacer>
     </v-app-bar>
-
-    <v-main>
+     <v-main>
      <router-view></router-view>
      <snackbar />
     </v-main>
@@ -75,8 +70,10 @@
           { title: 'Todo', icon: 'mdi-clipboard-list-outline', to: '/' },
           { title: 'About', icon: 'mdi-help-box', to: '/about' },
         ], 
-      
     }),
+    mounted() {
+      this.$store.dispatch('getTasks')  
+    },
     components: {
      'snackbar': require('@/components/Shared/Snackbar.vue').default
     }  
@@ -88,13 +85,11 @@
     .allItems {
       max-width: 90%;
   }
- 
-  }
-  
-   @media screen and (max-width: 542px) {
+}
+  @media screen and (max-width: 542px) {
     .textItems {
       margin-right: 12px;
   }
-   }
+}
 </style>
 

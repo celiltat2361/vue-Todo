@@ -1,14 +1,19 @@
 <template>
-  <v-snackbar v-model="$store.state.snackbar.show">
+  <v-snackbar 
+    v-model="$store.state.snackbar.show"
+    >
+    
     {{ $store.state.snackbar.text }}
 
-    <template v-slot:action="{ attrs }">
-      <v-btn
-        @click="$store.commit('hideSnackbar')"
-        color="#ffffff"
-        text
-        v-bind="attrs"
+    <template 
+      v-slot:action="{ attrs }"
       >
+        <v-btn
+          @click="$store.commit('hideSnackbar')"
+          color="#ffffff"
+          text
+          v-bind="attrs"
+        >
         Close
       </v-btn>
     </template>
@@ -20,4 +25,7 @@ export default {};
 </script>
 
 <style>
+  div.v-snack:not(.v-snack--absolute) {
+    height: 100;
+}
 </style>

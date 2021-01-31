@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-list-item
-      @click="$store.commit('doneTask', task.id)"
+      @click="$store.dispatch('doneTask', task.id)"
       :class="{ 'blue lighten-5' : task.done }"
     >
       <template v-slot:default>
@@ -22,7 +22,7 @@
         </v-list-item-content>
 
         <v-list-item-content v-if="task.user">
-          <v-list-item-title>{{ task.user }}</v-list-item-title>
+          <v-list-item-user>{{ task.user }}</v-list-item-user>
         </v-list-item-content>
                 
          <v-list-item-action>
@@ -68,7 +68,7 @@ export default {
   props: ['task'],
   filters: {
     niceDate(value) {
-      return format(new Date(value), 'MMM d') //sverige date-time format
+      return format(new Date(value), 'MMM d') 
     },
     
   },

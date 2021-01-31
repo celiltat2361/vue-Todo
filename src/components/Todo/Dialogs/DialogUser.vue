@@ -9,7 +9,7 @@
         Add User
       </v-card-title>
       <v-card-text>
-        Add an user to this task:
+        Add user for this task!
         <v-text-field
           v-model="taskUser"
           @keyup.enter="saveUser"

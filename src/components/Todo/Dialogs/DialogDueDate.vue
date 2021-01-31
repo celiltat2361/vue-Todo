@@ -52,7 +52,6 @@ export default {
       this.date = this.task.dueDate
     }
   }
-
 }
 </script>
 

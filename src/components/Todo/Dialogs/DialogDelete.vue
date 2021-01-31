@@ -6,9 +6,9 @@
   >
     <v-card>
       <v-card-title class="headline">
-        Delete task?
+        Delete Task!!!
       </v-card-title>
-      <v-card-text>Are you sure you wanna delete this task?</v-card-text>
+      <v-card-text>Are you sure you want to delete this task?</v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn

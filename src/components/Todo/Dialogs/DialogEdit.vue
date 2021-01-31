@@ -6,10 +6,10 @@
   >
     <v-card>
       <v-card-title class="headline">
-        Edit task
+        Edit Task!
       </v-card-title>
       <v-card-text>
-        Edit the title of this task:
+        Edit the title of this task.
         <v-text-field
           v-model="taskTitle"
           @keyup.enter="saveTask"

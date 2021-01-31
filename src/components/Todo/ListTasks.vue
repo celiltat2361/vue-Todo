@@ -3,7 +3,10 @@
       class="pt-2"
       two-line 
       flat>
-      <draggable tag="ul" :list="$store.state.tasks" handle=".handle">
+      <draggable tag="ul" 
+        :list="$store.state.tasks" 
+        handle=".handle"
+      >
       <task class="listItems"
         v-for="task in $store.state.tasks"
         :key="task.id"
