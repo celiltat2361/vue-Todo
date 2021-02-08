@@ -69,6 +69,7 @@
         items: [
           { title: 'Todo', icon: 'mdi-clipboard-list-outline', to: '/' },
           { title: 'About', icon: 'mdi-help-box', to: '/about' },
+          { title: 'Add Todo', icon: 'mdi-plus', to: '/add'}
         ], 
     }),
     mounted() {
